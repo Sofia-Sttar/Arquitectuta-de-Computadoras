@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unidad 4</title>
+        <link rel="shortcut icon" href="Index/icono3.png" type="image/x-icon">
+        <link rel="stylesheet" href="CSS/Estilos.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="Index.html">Menú</a>
+                <a href="Unidad 1.html">Unidad 1 </a>
+                <a href="Unidad 2.html">Unidad 2</a>
+                <a href="Unidad 3.html">Unidad 3 </a>
+                <a href="Practicas Arquitectura.html">Prácticas</a>
+            </nav>
+            <section class="textos-header">
+                <h1>Unidad 4</h1>
+            </section>
+            <div class="wave" style="height: 150px; overflow: hidden;" >
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M-0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L500.00,149.60 L-0.00,149.60 Z" style="stroke: none; fill:white ;">
+                    </path>
+                </svg>
+            </div>
+        </header>
+        <main>
+            <section>
+                <section class="contenedor modelos">
+                    <h2 class="titulo2">Índice</h2>
+                    <div class="contenedor-modelos">
+                        <img src="Index/compu-cel.png" alt="Procesador" class="imagen-modelos">
+                        <div class="contenedor-indice">
+                            <h3><span> 4.1 </span> Aspectos Básicos de la Computación Paralela </h3>
+                            <h3><span> 4.2 </span> Tipos de Computación Paralela </h3>
+                            <p>
+                                <ol class="listas-L">
+                                    <li>Clasificación.</li>
+                                    <li>Arquitectura de Computadoras Secuenciales</li>
+                                    <li>Organización de Direcciones de Memoria.</li>
+                                </ol>
+                            </p>
+                            <h3><span> 4.3 </span> Sistemas de Memoria (Compartida) Multiprocesadores</h3>
+                            <p>
+                                <ol class="listas-L">
+                                    <li>Redes de Interconexión Dinámica (Indirecta).</li>
+                                    <li>Medio compartido.</li>
+                                    <li>Conmutativos.</li>
+                                </ol>
+                            </p>
+                            <h3><span> 4.4 </span> Sistemas de Memoria (Distribuida) Multicomputadores</h3>
+                            <p>
+                                <ol class="listas-L">
+                                    <li>Redes de Interconexión Estática.</li>
+                                </ol>
+                            </p>
+                            <h3><span> 4.5 </span> Casos de estudio</h3>
+                        </div>
+                    </div>
+                </section>
+                <section class="modelos">
+                    <div class="contenedor">
+                        <h2 class="titulo2">4.1 Aspectos Básicos de la Computación Paralela </h2>
+                    </div>
+                    <section class="contenedor-textos">
+                        <P>
+                            La computación paralela es una forma de cómputo en la que muchas instrucciones se ejecutan simultáneamente, operando sobre el principio de que problemas grandes, a menudo se pueden dividir en unos más pequeños, que luego son resueltos simultáneamente (en paralelo).
+                        </P>
+                        <table class="tablas">
+                            <tr class="titulo-tablas">
+                                <th>Ventajas</th>
+                                <th>Desventajas</th>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td">
+                                    <ol class="listas-O">
+                                        <li>Resuelve problemas que no se podrían realizar en una sola CPU y/o en un tiempo razonable.</li>
+                                        <li>Permite ejecutar problemas de un orden y complejidad mayor.</li>
+                                        <li>Permite ejecutar código de manera más rápida (aceleración).</li>
+                                        <li>Permite ejecutar en general más problemas.</li>
+                                        <li>Permite la ejecución de varias instrucciones en simultáneo.</li>
+                                        <li>Permite dividir una tarea en partes independientes.</li>
+                                        <li>Ofrece mejor balance entre rendimiento y costo que la computación secuencial.</li>
+                                    </ol>
+                                </td>
+                                <td class="tablas-td">
+                                    <ol class="listas-O">
+                                        <li>Mayor consumo de energía.</li>
+                                        <li>Mayor dificultad a la hora de escribir programas.</li>
+                                        <li>Retardos ocasionados por comunicación ente tareas.</li>
+                                        <li>Número de componentes usados es directamente proporcional a los fallos potenciales.</li>
+                                        <li>Altos costos por producción y mantenimiento.</li>
+                                        <li>Si los procesos que están en condición de carrera no son correctamente sincronizados, puede producirse una corrupción de datos</li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td" colspan="2">
+                                    <img class="centro" src="Index/4.1.jpg" alt="Aspectos Básicos de la Computación Paralela"> 
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                </section>
+                <section class="modelos">
+                    <div class="contenedor">
+                        <h2 class="titulo2">4.2 Tipos de Computación Paralela </h2>
+                    </div>
+                    <h3 class="titulo3">4.2.1 Clasificación.</h3>
+                    <section class="contenedor-textos">
+                        <table class="tablas">
+                            <tr class="titulo-tablas">
+                                <th colspan="2">SISD (Single Instruction, Single Data)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Instrucción Única, Datos Únicos. Un único procesador se encarga de gestionar simultáneamente un algoritmo como una única fuente de datos.
+                                    <br>
+                                    SISD representa una organización informática que tiene una unidad de control, una de procesamiento y una de memoria similar a la computadora serie. Ejecuta las instrucciones secuencialmente y puede o no ser capaz de realizar procesamiento en paralelo, dependiendo de su configuración.
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/SISD.webp" alt="SISD" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr class="titulo-tablas">
+                                <th colspan="2">MISD (Multiple Instruction, Single Data)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Los procesadores múltiples son estándar en las computadoras que utilizan Instrucción Múltiple, Datos Únicos (MISD). Al utilizar varios algoritmos, todos los procesadores comparten los mismos datos de entrada. Pueden realizar simultáneamente muchas operaciones en el mismo lote de datos. La cantidad de operaciones se ve afectada por la cantidad de procesadores disponibles. La salida de un procesador se convierte en la entrada del siguiente.
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/MISD.webp" alt="MISD" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr class="titulo-tablas">
+                                <th colspan="2">SIMD (Single Instruction, Multiple Data)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Las computadoras que utilizan la arquitectura SIMD (Instrucción Única, Datos Múltiples) tienen múltiples procesadores que ejecutan instrucciones idénticas. Sin embargo, cada procesador proporciona las instrucciones con su colección única de datos. Aplican el mismo algoritmo a varios conjuntos de datos. La arquitectura SIMD cuenta con varios componentes de procesamiento, los cuales están bajo la supervisión de una única unidad de control.
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/SIMF.webp" alt="SIMD" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr class="titulo-tablas">
+                                <th colspan="2">MIMD (Multiple Instruction, Multiple Data)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Instrucción Múltiple, Datos Múltiples. Se caracterizan por la presencia de múltiples procesadores y cada uno de ellos es capaz de aceptar de forma  independiente su flujo de instrucciones. Este tipo de computadoras tienen muchos procesadores y, además, cada CPU extrae datos de un flujo de datos diferente. Una computadora MIMD es capaz de ejecutar muchas tareas simultáneamente. Desarrollar los sofisticados algoritmos que impulsan estas máquinas es más complejo.
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/MIMD.webp" alt="MIMD" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr class="titulo-tablas">
+                                <th colspan="2">SPMD (Single Program, Multiple Data)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Programa Único, Datos Múltiples, son un subconjunto de MIMD. Cada uno de sus procesadores es responsable de ejecutar las mismas instrucciones. Es una programación de paso de mensajes utilizada en sistemas informáticos de memoria distribuida. un grupo de computadoras separadas, denominadas colectivamente nodos, forman una computadora con memoria distribuida. Cada nodo inicia su aplicación y utiliza rutinas de envío/recepción para enviar y recibir mensajes cuando interactúa con otros nodos.
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/SPMD.png" alt="SPMD">
+                                </td>
+                            </tr>
+                            <tr class="titulo-tablas">
+                                <th colspan="2">MPP (Massively Parallel Processing)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Se crea el Procesamiento Masivo en Paralelo para gestionar la ejecución coordinada de las operaciones del programa por parte de numerosos procesadores. Dado que cada CPU utiliza su sistema operativo y su memoria, este procesamiento coordinado se puede aplicar a diferentes secciones del programa. Como resultado, las bases de datos MPP pueden manejar enormes cantidades de datos y ofrecer análisis basados en grandes conjuntos de datos considerablemente más rápido. Pueden tener hasta 200 o más procesadores trabajando en una aplicación.
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/MPP.svg" alt="MPP" style="max-width: 80%;">
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <h3 class="titulo3">4.2.2 Arquitectura de computadoras secuenciales</h3>
+                    <section class="contenedor-textos">
+                        <p>
+                            La arquitectura de computadoras secuenciales se basa en el modelo introducido por John Von Neumann. En este modelo, encontramos los siguientes componentes:
+                        </p>
+                        <ol class="listas-L">
+                            <li><strong class="titulo5">Unidad Central de Procesamiento (CPU):</strong> Es el corazón de la computadora y ejecuta las instrucciones.</li>
+                            <li><strong class="titulo5">Memoria Principal:</strong> Almacena información, como programas y datos.</li>
+                            <li><strong class="titulo5">Bus:</strong>Permite el flujo de datos entre la CPU y la memoria. </li>
+                            <li><strong class="titulo5">Mecanismo de sincronización:</strong>Coordina las operaciones entre los componentes.</li>
+                        </ol>
+                        <p>
+                            Las computadoras secuenciales procesan instrucciones de manera secuencial. En otras palabras, cada instrucción se ejecuta una tras otra. Aunque este enfoque es común en la mayoría de las computadoras convencionales, se han desarrollado estrategias para mejorar el rendimiento. Una de las más conocidas es la segmentación de instrucciones (pipeline), que permite ejecutar la siguiente instrucción mientras se procesa la actual.
+                        </p>
+                        <table class="tablas">
+                            <tr class="titulo-tablas">
+                                <th colspan="2">Ventajas</th>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td">
+                                    <ol class="listas-O">
+                                        <li><strong class="titulo5">Simplicidad:</strong>Los sistemas secuenciales son más fáciles de diseñar y entender. Siguen un flujo lógico paso a paso, lo que facilita su implementación.</li>
+                                        <li><strong class="titulo5">Predicción de Rendimiento:</strong>Dado que las instrucciones se ejecutan en orden, es más sencillo predecir el rendimiento y calcular el tiempo de ejecución.</li>
+                                        <li><strong class="titulo5">Menos Problemas de Control:</strong>La ejecución secuencial reduce la complejidad de los problemas de control, como la gestión de conflictos en el acceso a recursos compartidos.</li>
+                                        <li><strong class="titulo5">Facilidad de Depuración:</strong>En comparación con arquitecturas más complejas, las computadoras secuenciales son más fáciles de depurar y rastrear errores.</li>
+                                    </ol>
+                                </td>
+                                <td class="tablas-td" colspan="2">
+                                    <img class="centro" src="Index/4.2.2.png" alt=" Arquitectura de computadoras secuenciales" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <h3 class="titulo3">4.2.3 Organización de direcciones de memoria</h3>
+                    <section class="contenedor-textos">
+                        <p>
+                            Una dirección de memoria es un identificador para una localización de memoria con la cual un programa informático o un dispositivo de hardware pueden almacenar un dato para su posterior reutilización. Una forma común de describir la memoria principal de una computadora es como una colección de celdas que almacenan datos e instrucciones.
+                            <br>
+                            El direccionamiento de la memoria puede considerarse desde dos puntos de vista:
+                        </p>
+                        <table class="tablas">
+                            <tr class="titulo-tablas">
+                                <th>Fisíco</th>                                
+                                <th>Lógico</th>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td">
+                                    Se refiere a los medios electrónicos utilizados en el ordenador para acceder a las diversas posiciones de memoria.
+                                </td>
+                                <td class="tablas-td">
+                                    Se refiere a la forma en que se expresan y guardan las direcciones.
+                                </td>
+                            </tr>
+                        </table>
+                        <img class="centro" src="Index/4.2.3.png" alt=" Organización de direcciones de memoria" style="max-width: 50%;">
+                    </section>
+                </section> 
+                <section class="modelos">
+                    <div class="contenedor">
+                        <h2 class="titulo2">4.3 Sistemas de Memoria (Compartida) Multiprocesadores </h2>
+                    </div>
+                    <section class="contenedor-textos">
+                        <p>
+                            La memoria compartida es aquel tipo de memorias que puede ser accedida por múltiples programas, ya sea para comunicarse entre ellos o para evitar copias redundantes. La memoria compartida es un modo eficaz de pasar datos entre aplicaciones. Dependiendo del contexto, los programas pueden ejecutarse en un mismo procesador o en procesadores separados.
+                        </p>
+                        <h3 class="titulo3">Multiprocesadores</h3>
+                        <p>
+                            Se denomina multiprocesador a un computador que te permite abrir programas en más de una CPU por lo que puede ejecutar simultáneamente varios hilos pertenecientes a un mismo proceso o bien a procesos diferentes.
+                            <br>                            
+                            Las computadoras multiprocesador presentan problemas de diseño. Estos problemas derivan del hecho de que dos programas pueden ejecutarse simultáneamente y, potencialmente, pueden interferirse entre sí.
+                        </p>
+                        <p>
+                            Existen 3 arquitecturas que resuelven estos problemas:
+                        </p>
+                        <table class="tablas">
+                            <tr class="titulo-tablas">
+                                <th>Arquitectura UMA (Uniform Memory Access)</th>
+                                <th>Arquitectura NUMA (Non-Uniform Memory Access)</th>
+                                <th>Arquitectura COMA (Cache-only Memory Access)</th>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    Todos los procesadores comparten toda la memoria de forma simétrica:
+                                </td>
+                                <td class="tres-Tablas">
+                                    Cada procesador tiene acceso y control exclusivo a una parte de la memoria. Por lo que el acceso a esta memoria no es simétrico entre todos los CPU.
+                                </td>
+                                <td class="tres-Tablas">
+                                    Cada procesador tiene acceso y control exclusivo a una parte de la memoria caché.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/Arhitectura_UMA.jpg" alt="UMA">
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/Arhitectura_NUMA.jpeg" alt="NUMA">
+                                </td>
+                                <td class="tres-Tablas">
+                                    <img class="centro" src="Index/COMA.png" alt="COMA">
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <h3 class="titulo4">4.3.1 Redes de Interconexión Dinámica (Indirecta)</h3>
+                    <img class="derecha" src="Index/4.3.1.png" alt="Redes de Interconexión Dinámica" style="max-width: 40%;">
+                    <section class="contenedor-textos">
+                        <p>
+                            Son redes que pueden cambiar la topología de comunicación durante la ejecución de los programas o entre dos ejecuciones de programas.
+                        </p>
+                        <p>
+                            Las redes dinámicas se han utilizado esencialmente en los multiprocesadores de memoria compartida: la red dinámica soporta, por consiguiente, la carga de unir los N procesadores a losMbancos de la memoria central.
+                        </p>
+                        <h3 class="titulo6">Medio Compartido</h3>
+                        <p>
+                            Un medio compartido se refiere a un tipo de red donde múltiples dispositivos comparten un único canal de comunicación para enviar datos. Varios dispositivos, como computadoras, servidores, impresoras, etc., están conectados a través de un medio compartido, como un cable Ethernet o una red inalámbrica.
+                        </p>
+                        <p>
+                            Cuando la red se quiere conectar a varios dispositivos conlleva a interferencias o colisiones, por lo tanto se debe de establecer un mecanismo que regule esto, esto nos lleva a la conmutación.
+                        </p>
+                        <h3 class="titulo6">Redes Conmutadas</h3>
+                        <p>
+                            Son aquellas en la que la comunicación entre un host origen y un host destino se realiza mediante la transmisión de datos a través de una red de nodos intermedios. Cada nodo almacena temporalmente la información antes de reenviarla.
+                        </p>
+                        <p>
+                            El proceso consta en 3 fases:
+                            <ol class="listas-L">
+                                <li>Establecimiento de la conexión.</li>
+                                <li>Transferencia de la información.</li>
+                                <li>Liberación de la conexión.</li>
+                            </ol>
+                        </p>
+                    </section>
+                </section> 
+                <section class="modelos">
+                    <div class="contenedor">
+                        <h2 class="titulo2">4.4 Sistemas de Memoria (Distribuida) Multicomputadores </h2>
+                    </div>
+                    <h3 class="titulo3">Cluster</h3>
+                    <section class="contenedor-textos">
+                        <p>
+                            Un cúmulo, granja o cluster de computadoras, lo podemos definir como un sistema de procesamiento paralelo o distribuido. Consta de un conjunto de computadoras independientes, interconectadas entre sí, de tal manera que funcionan como un solo recurso computacional.
+                        </p>
+                        <p>
+                            La Distributed SharedMemory (DSM, o memoria distribuida compartida) es un tipo de implementación hardware y software, en la que cada nodo de un cluster tiene acceso a una amplia memoria compartida que se añade a la memoria limitada privada, no compartida, propia de cada nodo.
+                        </p>
+                        <table class="tablas">
+                            <tr class="titulo-tablas">
+                                <th>Ventajas</th>
+                                <th>Desventajas</th>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td">
+                                    <ol class="listas-O">
+                                        <li>Poder agregar nodos (computadoras) para aumentar el almacenamiento y rendimiento y así aumentar el volumen de datos y procesamiento.</li>
+                                        <li>Si un nodo falla, los datos se quedan guardados en los demás nodo, por lo que no causa interrupciones significativas.</li>
+                                        <li>Cualquier fallo que se presente en un nodo no afecta gravemente a los demás.</li>
+                                        <li>Tiene mejor rendimiento que un sistema centralizado.</li>
+                                    </ol>
+                                </td>
+                                <td class="tablas-td">
+                                    <ol class="listas-O">
+                                        <li>Requieren un mayor nivel de planificación, monitoreo y mantenimiento.</li>
+                                        <li>La replicación y distribución de datos pueden causar conflictos de sincronización y problemas de gestionar.</li>
+                                        <li>Mayor costo de implementación y mantenimiento.</li>
+                                        <li>El rendimiento de todo el sistema depende del rendimiento de la red.</li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td" colspan="2">
+                                    <img class="centro" src="Index/cluster2.png" alt="Cluster"> 
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <h3 class="titulo3">4.4.1 Redes de Interconexión estáticas</h3>
+                    <section class="contenedor-textos">
+                        <p>
+                            Una red estática es una red cuya topología queda definida de manera definitiva y estable durante la construcción de la máquina paralela. La red simplemente une los diversos elementos de acuerdo a una configuración dada.
+                            <br>
+                            Se utiliza sobre todo en el caso de los multicomputadores para conectar los diversos procesadores que posee la máquina.
+                        </p>
+                        <p>
+                            Emplean enlaces directos fijos entre los nodos, una vez fabricado, estos nodos difíciles de cambiar por lo que la escalabilidad de estas topologías es baja.
+                            <br>
+                            Pueden utilizarse eficientemente si se predice el tipo de tráfico de comunicaciones entre los procesadores.
+                        </p>
+                    </section>
+                </section> 
+                <section class="modelos">
+                    <div class="contenedor">
+                        <h2 class="titulo2">4.5 Casos de estudio </h2>
+                    </div>
+                    <section class="contenedor-textos">
+                        <p>
+                            El procesamiento distribuido se ha convertido en un área de gran importancia e interés dentro de la Ciencia de la Computación.
+                        </p>
+                        <p>
+                            Interesa realizar investigación en la especificación, transformación, optimización y evaluación de algoritmos distribuidos y paralelos.
+                            <br>
+                            Esto incluye el diseño y desarrollo de sistemas paralelos, la transformación de algoritmos secuenciales en paralelos, y las métricas de evaluación de performance sobre distintas plataformas de soporte (hardware y software).
+                        </p>
+                        <p>
+                            Más allá de las mejoras constantes en las arquitecturas físicas de soporte, uno de los mayores desafíos se centra en cómo aprovechar al máximo la potencia de las mismas.
+                            <br>
+                            A continuación vamos a ver las líneas de investigación y desarrollo:
+                        </p>
+                        <table class="tablas">
+                            <tr>
+                                <td class="tablas-td"> 
+                                    Paralelización de algoritmos secuenciales. Diseño y optimización de algoritmos.
+                                    <img class="centro" src="Index/DOA.jpg" alt="Diseño y optimización de algoritmos." style="max-width: 50%;">
+                                </td>
+                                <td class="tablas-td"> 
+                                    Arquitecturas multicore y multithreading en multicore.
+                                    <img class="centro" src="Index/AMMM.jpeg" alt="Multicore y Multithreading" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td"> 
+                                    Modelos de representación y predicción de performance de algoritmos paralelos.
+                                    <img class="centro" src="Index/algoritmos paralelos.jpeg" alt="Algoritmos Paralelos" style="max-width: 50%;">
+                                </td>
+                                <td class="tablas-td"> 
+                                    Mapping y scheduling de aplicaciones paralelas sobre distintas arquitecturas multiprocesador.
+                                    <img class="centro" src="Index/arquitecturas multiprocesador.png" alt="Arquitecturas Multiprocesador" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td"> 
+                                    Métricas del paralelismo. Speedup, eficiencia, rendimiento, granularidad, superlinealidad.
+                                    <img class="centro" src="Index/algoritmos paralelos.jpeg" alt="Algoritmos Paralelos" style="max-width: 50%;">
+                                </td>
+                                <td class="tablas-td"> 
+                                    Balance de carga estático y dinámico. Técnicas de balanceo de carga.
+                                    <img class="centro" src="Index/load_balancer.jpg.webp" alt="Balanceo de Carga" style="max-width: 50%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tablas-td"> 
+                                    Análisis de los problemas de migración y asignación óptima de procesos y datos a procesadores.Migración dinámica.
+                                    <img class="centro" src="Index/MDD.webp" alt="Migración de Datos" style="max-width: 50%;">
+                                </td>
+                                <td class="tablas-td"> 
+                                    Patrones de diseño de algoritmos paralelos.
+                                    <img class="centro" src="Index/PDAP.png" alt="Algoritmos Paralelos" style="max-width: 30%;">
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                </section>                 
+            </section>
+        </main>
+        <footer>
+            <div class="contenedor-footer">
+                <div class="content-foo">
+                    <h4>Creado por:</h4>
+                    <p> &copy; Lourdes Sofia Star de la Rosa</p>
+                    <a href = "https://saltillo.tecnm.mx/" style="color: black;" target="_blank" rel="noopener noreferrer">  INSTITUTO TECNOLÓGICO DE  SALTILLO  </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
